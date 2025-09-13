@@ -12,30 +12,60 @@ h1, h2, h3 {
   font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
-/* Gradient Animation */
-@keyframes gradientShift {
+/* Nature-inspired animations */
+@keyframes floatingLeaves {
   0% {
-    background-position: 0% 50%;
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
   }
-  50% {
-    background-position: 100% 50%;
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
   }
   100% {
-    background-position: 0% 50%;
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
-/* Glassmorphism utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+@keyframes organicGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 195, 74, 0.2), 0 0 40px rgba(139, 195, 74, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 195, 74, 0.4), 0 0 80px rgba(139, 195, 74, 0.2);
+  }
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+@keyframes natureLighting {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
+/* Enhanced glassmorphism with nature theme */
+.organic-glow {
+  animation: organicGlow 4s ease-in-out infinite;
+}
+
+.nature-light {
+  animation: natureLighting 6s ease-in-out infinite;
+}
+
+.floating-leaf {
+  animation: floatingLeaves 20s linear infinite;
+}
+
+/* Radial gradient utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
 }
 
 /* Scroll-triggered animations */
@@ -54,24 +84,24 @@ h1, h2, h3 {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Enhanced text shadows for better readability on gradient backgrounds */
+/* Enhanced text shadows for nature theme */
 .text-shadow-lg {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 195, 74, 0.3);
 }
 
 .text-shadow-md {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 195, 74, 0.2);
 }
 
 .text-shadow-sm {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 5px rgba(139, 195, 74, 0.1);
 }
 
 /* GSAP ScrollTrigger enhancements */
 .navbar.scrolled {
-  background: rgba(26, 60, 64, 0.95);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(48, 118, 114, 0.3);
+  border-bottom: 1px solid rgba(139, 195, 74, 0.3);
 }
 
 /* Smooth transitions for GSAP animations */
@@ -93,10 +123,28 @@ h1, h2, h3 {
   opacity: 0;
 }
 
-/* Enhanced glassmorphism for floating elements */
+/* Enhanced nature elements */
 .floating-element-1,
 .floating-element-2,
 .floating-element-3 {
   will-change: transform;
   backface-visibility: hidden;
+}
+
+/* Custom scrollbar with nature theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 195, 74, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 195, 74, 0.7);
 }
