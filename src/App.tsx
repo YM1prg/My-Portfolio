@@ -1,17 +1,211 @@
 import React, { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronDown, Github, ExternalLink, Mail, Linkedin, Code, Brain, Database, Cpu, Globe, Award, User, Briefcase, Lightbulb, Download } from 'lucide-react';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    setIsVisible(true);
-    
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    // GSAP ScrollTrigger animations
+    const ctx = gsap.context(() => {
+      // Hero section animations
+      gsap.fromTo('.hero-title', 
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', delay: 0.3 }
+      );
+      
+      gsap.fromTo('.hero-subtitle', 
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.6 }
+      );
+      
+      gsap.fromTo('.hero-description', 
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.9 }
+      );
+      
+      gsap.fromTo('.hero-buttons', 
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 1.2 }
+      );
+      
+      gsap.fromTo('.hero-icon', 
+        { opacity: 0, scale: 0.5, rotation: -180 },
+        { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: 'back.out(1.7)', delay: 0.1 }
+      );
+      
+      // Floating elements parallax
+      gsap.to('.floating-element-1', {
+        y: -100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: '.floating-element-1',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+      
+      gsap.to('.floating-element-2', {
+        y: 150,
+        rotation: -360,
+        scrollTrigger: {
+          trigger: '.floating-element-2',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5
+        }
+      });
+      
+      gsap.to('.floating-element-3', {
+        y: -80,
+        rotation: 180,
+        scrollTrigger: {
+          trigger: '.floating-element-3',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.8
+        }
+      });
+      
+      // Section animations
+      gsap.utils.toArray('.section-title').forEach((title: any) => {
+        gsap.fromTo(title,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: title,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+      
+      // Project cards stagger animation
+      gsap.utils.toArray('.project-card').forEach((card: any, index) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 80, scale: 0.9 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            ease: 'power3.out',
+            delay: index * 0.2,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+      
+      // Skills cards animation
+      gsap.utils.toArray('.skill-card').forEach((card: any, index) => {
+        gsap.fromTo(card,
+          { opacity: 0, x: index % 2 === 0 ? -50 : 50, rotationY: 15 },
+          {
+            opacity: 1,
+            x: 0,
+            rotationY: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            delay: (index % 3) * 0.1,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+      
+      // About section content
+      gsap.fromTo('.about-content',
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.about-content',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+      
+      gsap.fromTo('.about-sidebar',
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          delay: 0.3,
+          scrollTrigger: {
+            trigger: '.about-sidebar',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+      
+      // Experience section
+      gsap.fromTo('.experience-card',
+        { opacity: 0, y: 100, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.experience-card',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+      
+      // Contact buttons stagger
+      gsap.utils.toArray('.contact-button').forEach((button: any, index) => {
+        gsap.fromTo(button,
+          { opacity: 0, y: 30, scale: 0.9 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: 'back.out(1.7)',
+            delay: index * 0.1,
+            scrollTrigger: {
+              trigger: '.contact-buttons',
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+      
+      // Navbar animation on scroll
+      ScrollTrigger.create({
+        start: 'top -80',
+        end: 99999,
+        toggleClass: { className: 'scrolled', targets: '.navbar' }
+      });
+    });
     
     const handleScrollSection = () => {
       const sections = ['hero', 'about', 'projects', 'experience', 'skills', 'contact'];
@@ -24,11 +218,14 @@ function App() {
         return false;
       });
       if (current) setActiveSection(current);
-      setScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScrollSection);
-    return () => window.removeEventListener('scroll', handleScrollSection);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScrollSection);
+      ctx.revert(); // Clean up GSAP animations
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -47,7 +244,7 @@ function App() {
   return (
     <div className="bg-[#1A3C40] text-[#E4EDDB] min-h-screen font-serif">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-[#1A3C40]/20 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300">
+      <nav className="navbar fixed top-0 w-full bg-[#1A3C40]/20 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-8 py-8">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-normal tracking-wide text-white">
@@ -92,49 +289,38 @@ function App() {
         
         {/* Floating glassmorphism elements */}
         <div 
-          className="absolute top-20 left-20 w-32 h-32 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-          style={{
-            transform: `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05}deg)`
-          }}
+          className="floating-element-1 absolute top-20 left-20 w-32 h-32 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
         ></div>
         <div 
-          className="absolute bottom-40 right-32 w-24 h-24 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-          style={{
-            transform: `translateY(${scrollY * -0.15}px) rotate(${scrollY * -0.08}deg)`
-          }}
+          className="floating-element-2 absolute bottom-40 right-32 w-24 h-24 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
         ></div>
         <div 
-          className="absolute top-1/2 right-20 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-          style={{
-            transform: `translateY(${scrollY * 0.08}px) rotate(${scrollY * 0.1}deg)`
-          }}
+          className="floating-element-3 absolute top-1/2 right-20 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
         ></div>
         
-        <div className={`text-center max-w-4xl transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        } relative z-10`}>
+        <div className="text-center max-w-4xl relative z-10">
           {/* Glassmorphism card for main content */}
           <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-16 shadow-2xl">
           <div className="mb-20">
-            <div className="w-28 h-28 bg-white/20 backdrop-blur-md rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg border border-white/30">
+            <div className="hero-icon w-28 h-28 bg-white/20 backdrop-blur-md rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg border border-white/30">
               <Brain className="w-14 h-14 text-white" />
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-light mb-12 text-white tracking-tight leading-none drop-shadow-lg">
+            <h1 className="hero-title text-7xl md:text-9xl font-light mb-12 text-white tracking-tight leading-none drop-shadow-lg">
               Your Name Here
             </h1>
             
             <div className="space-y-6 mb-20">
-              <p className="text-3xl md:text-4xl font-normal text-white/90 tracking-wide drop-shadow-md">
+              <p className="hero-subtitle text-3xl md:text-4xl font-normal text-white/90 tracking-wide drop-shadow-md">
                 AI/ML Engineer
               </p>
-              <p className="text-xl text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+              <p className="hero-description text-xl text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
                 Computer Science @ Nile University — Building intelligent systems that bridge data and human understanding
               </p>
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center mb-24">
+          <div className="hero-buttons flex flex-col sm:flex-row gap-8 justify-center mb-24">
             <button 
               onClick={() => scrollToSection('projects')}
               className="bg-white/20 hover:bg-white/30 backdrop-blur-md px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 border border-white/30 hover:border-white/50 text-white hover:shadow-lg rounded-lg"
@@ -160,12 +346,12 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-40 px-8 bg-[#144D53]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
+          <h2 className="section-title text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
             About
           </h2>
           
           <div className="grid md:grid-cols-5 gap-20 items-start">
-            <div className="md:col-span-3 space-y-10">
+            <div className="about-content md:col-span-3 space-y-10">
               <p className="text-2xl font-normal text-[#E4EDDB] leading-relaxed">
                 I'm a Computer Science sophomore at Nile University (GPA: 3.76) driven by the belief that data tells profound stories—I help decode them into actionable insights that solve real problems.
               </p>
@@ -179,7 +365,7 @@ function App() {
               </p>
             </div>
             
-            <div className="md:col-span-2">
+            <div className="about-sidebar md:col-span-2">
               <div className="bg-[#1A3C40]/60 p-10 border border-[#307672]/30">
                 <h3 className="text-xl font-normal mb-10 text-[#307672] tracking-wide">
                   Current Focus
@@ -211,12 +397,12 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="py-40 px-8 bg-[#1A3C40]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
+          <h2 className="section-title text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
             Projects
           </h2>
           
           {/* Project 1: Heart Disease Predictor */}
-          <div className="mb-40">
+          <div className="project-card mb-40">
             <div className="grid md:grid-cols-2 gap-20 items-start">
               <div className="space-y-10">
                 <div className="flex items-center gap-6 mb-10">
@@ -292,7 +478,7 @@ function App() {
           </div>
 
           {/* Project 2: Generative AI Web App */}
-          <div className="mb-40">
+          <div className="project-card mb-40">
             <div className="grid md:grid-cols-2 gap-20 items-start">
               <div className="space-y-10">
                 <div className="flex items-center gap-6 mb-10">
@@ -371,7 +557,7 @@ function App() {
           </div>
 
           {/* Project 3: Arduino Line-Follower */}
-          <div className="mb-20">
+          <div className="project-card mb-20">
             <div className="grid md:grid-cols-2 gap-20 items-start">
               <div className="space-y-10">
                 <div className="flex items-center gap-6 mb-10">
@@ -457,11 +643,11 @@ function App() {
       {/* Experience Section */}
       <section id="experience" className="py-40 px-8 bg-[#144D53]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
+          <h2 className="section-title text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
             Experience
           </h2>
           
-          <div className="bg-[#1A3C40]/60 p-16 border border-[#307672]/30">
+          <div className="experience-card bg-[#1A3C40]/60 p-16 border border-[#307672]/30">
             <div className="flex items-start gap-8">
               <div className="w-20 h-20 bg-[#307672] flex items-center justify-center">
                 <Award className="w-10 h-10 text-[#E4EDDB]" />
@@ -523,13 +709,13 @@ function App() {
       {/* Skills Section */}
       <section id="skills" className="py-40 px-8 bg-[#1A3C40]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
+          <h2 className="section-title text-6xl font-light text-center mb-24 text-[#E4EDDB] tracking-tight">
             Skills
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
             {Object.entries(skills).map(([category, skillList], index) => (
-              <div key={category} className="bg-[#144D53]/60 p-10 border border-[#307672]/30">
+              <div key={category} className="skill-card bg-[#144D53]/60 p-10 border border-[#307672]/30">
                 <h3 className="text-2xl font-normal text-[#E4EDDB] mb-10 flex items-center gap-4 tracking-wide">
                   {category === 'Programming Languages' && <Code className="w-6 h-6 text-[#307672]" />}
                   {category === 'ML/AI' && <Brain className="w-6 h-6 text-[#307672]" />}
@@ -599,23 +785,23 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="py-40 px-8 bg-[#1A3C40]">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-6xl font-light mb-16 text-[#E4EDDB] tracking-tight">
+          <h2 className="section-title text-6xl font-light mb-16 text-[#E4EDDB] tracking-tight">
             Contact
           </h2>
           <p className="text-2xl font-normal text-[#E4EDDB] mb-20 max-w-3xl mx-auto leading-relaxed">
             I'm always excited to discuss AI/ML projects, research opportunities, or innovative ideas that create real-world impact.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center mb-24">
-            <button className="bg-[#307672] hover:bg-[#307672]/80 px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4">
+          <div className="contact-buttons flex flex-col sm:flex-row gap-8 justify-center mb-24">
+            <button className="contact-button bg-[#307672] hover:bg-[#307672]/80 px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4">
               <Mail className="w-6 h-6" />
               Email
             </button>
-            <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
+            <button className="contact-button border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
               <Linkedin className="w-6 h-6" />
               LinkedIn
             </button>
-            <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
+            <button className="contact-button border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
               <Github className="w-6 h-6" />
               GitHub
             </button>

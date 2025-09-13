@@ -66,3 +66,37 @@ h1, h2, h3 {
 .text-shadow-sm {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
+/* GSAP ScrollTrigger enhancements */
+.navbar.scrolled {
+  background: rgba(26, 60, 64, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(48, 118, 114, 0.3);
+}
+
+/* Smooth transitions for GSAP animations */
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-buttons,
+.hero-icon {
+  opacity: 0;
+}
+
+.section-title,
+.project-card,
+.skill-card,
+.about-content,
+.about-sidebar,
+.experience-card,
+.contact-button {
+  opacity: 0;
+}
+
+/* Enhanced glassmorphism for floating elements */
+.floating-element-1,
+.floating-element-2,
+.floating-element-3 {
+  will-change: transform;
+  backface-visibility: hidden;
+}
