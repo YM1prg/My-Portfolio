@@ -4,9 +4,14 @@ import { ChevronDown, Github, ExternalLink, Mail, Linkedin, Code, Brain, Databas
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
+    
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
     
     const handleScroll = () => {
       const sections = ['hero', 'about', 'projects', 'experience', 'skills', 'contact'];
@@ -19,6 +24,7 @@ function App() {
         return false;
       });
       if (current) setActiveSection(current);
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -41,10 +47,10 @@ function App() {
   return (
     <div className="bg-[#1A3C40] text-[#E4EDDB] min-h-screen font-serif">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-[#1A3C40]/95 backdrop-blur-sm border-b border-[#144D53]/50 z-50">
+      <nav className="fixed top-0 w-full bg-[#1A3C40]/20 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-8 py-8">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-normal tracking-wide text-[#307672]">
+            <div className="text-2xl font-normal tracking-wide text-white">
               Portfolio
             </div>
             <div className="hidden md:flex space-x-16">
@@ -54,8 +60,8 @@ function App() {
                   onClick={() => scrollToSection(item.toLowerCase())}
                   className={`text-lg font-normal tracking-wide transition-colors duration-300 ${
                     activeSection === item.toLowerCase() 
-                      ? 'text-[#307672]' 
-                      : 'text-[#E4EDDB]/70 hover:text-[#E4EDDB]'
+                      ? 'text-white' 
+                      : 'text-white/70 hover:text-white'
                   }`}
                 >
                   {item}
@@ -67,10 +73,48 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center px-8 bg-gradient-to-br from-[#1A3C40] to-[#144D53]">
+      <section 
+        id="hero" 
+        className="min-h-screen flex items-center justify-center px-8 relative overflow-hidden"
+        style={{
+          background: `linear-gradient(45deg, 
+            #1A3C40 0%, 
+            #144D53 25%, 
+            #307672 50%, 
+            #144D53 75%, 
+            #1A3C40 100%)`,
+          backgroundSize: '400% 400%',
+          animation: 'gradientShift 8s ease-in-out infinite'
+        }}
+      >
+        {/* Glassmorphism overlay */}
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
+        
+        {/* Floating glassmorphism elements */}
+        <div 
+          className="absolute top-20 left-20 w-32 h-32 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+          style={{
+            transform: `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05}deg)`
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-40 right-32 w-24 h-24 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+          style={{
+            transform: `translateY(${scrollY * -0.15}px) rotate(${scrollY * -0.08}deg)`
+          }}
+        ></div>
+        <div 
+          className="absolute top-1/2 right-20 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+          style={{
+            transform: `translateY(${scrollY * 0.08}px) rotate(${scrollY * 0.1}deg)`
+          }}
+        ></div>
+        
         <div className={`text-center max-w-4xl transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        } relative z-10`}>
+          {/* Glassmorphism card for main content */}
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-16 shadow-2xl">
           <div className="mb-20">
             <div className="w-28 h-28 bg-gradient-to-br from-[#307672] to-[#144D53] rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg">
               <Brain className="w-14 h-14 text-[#E4EDDB]" />
@@ -518,19 +562,19 @@ function App() {
                     <div key={skill} className="flex items-start gap-4">
                       <div className="w-3 h-3 bg-[#307672] rounded-full mt-2"></div>
                       <span className="font-normal text-[#E4EDDB] leading-relaxed text-lg">{skill}</span>
-                    </div>
-                  ))}
+              <div className="w-28 h-28 bg-white/20 backdrop-blur-md rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg border border-white/30">
+                <Brain className="w-14 h-14 text-white" />
                 </div>
               </div>
-              <div>
+              <h1 className="text-7xl md:text-9xl font-light mb-12 text-white tracking-tight leading-none drop-shadow-lg">
                 <h4 className="font-normal text-[#307672] mb-8 tracking-wide text-xl">Languages & Interests</h4>
                 <div className="space-y-6 mb-10">
                   <div className="flex items-start gap-4">
                     <div className="w-3 h-3 bg-[#307672] rounded-full mt-2"></div>
-                    <span className="font-normal text-[#E4EDDB] leading-relaxed text-lg">English (Fluent) • Arabic (Native)</span>
+                <p className="text-3xl md:text-4xl font-normal text-white/90 tracking-wide drop-shadow-md">
                   </div>
                 </div>
-                <p className="text-[#E4EDDB]/80 font-normal leading-relaxed text-lg">
+                <p className="text-xl text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
                   <span className="text-[#307672]">Beyond Code:</span> Graphic design reviewer at NU Book Club, combining aesthetic sensibility with technical precision. Gaming and digital design fuel creative problem-solving approaches.
                 </p>
               </div>
@@ -539,7 +583,7 @@ function App() {
         </div>
       </section>
 
-      {/* Future Vision Section */}
+                className="bg-white/20 hover:bg-white/30 backdrop-blur-md px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 border border-white/30 hover:border-white/50 text-white hover:shadow-lg rounded-lg"
       <section className="py-32 px-8 bg-[#144D53]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-5xl font-light mb-16 text-[#E4EDDB] tracking-tight">
@@ -568,15 +612,16 @@ function App() {
             </button>
             <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
               <Linkedin className="w-6 h-6" />
-              LinkedIn
+              <button className="border border-white/30 hover:border-white/50 px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-white/10 backdrop-blur-md text-white rounded-lg">
             </button>
             <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
               <Github className="w-6 h-6" />
               GitHub
+          </div>
             </button>
           </div>
           
-          <div className="text-[#E4EDDB]/70 font-normal space-y-3 text-lg">
+              className="w-8 h-8 text-white/70 mx-auto cursor-pointer hover:text-white transition-colors duration-300 drop-shadow-md"
             <p>📍 Nile University, Egypt</p>
             <p>💼 Open to internships, research opportunities, and collaborations</p>
           </div>
