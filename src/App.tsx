@@ -13,7 +13,7 @@ function App() {
       setScrollY(window.scrollY);
     };
     
-    const handleScroll = () => {
+    const handleScrollSection = () => {
       const sections = ['hero', 'about', 'projects', 'experience', 'skills', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -27,8 +27,8 @@ function App() {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScrollSection);
+    return () => window.removeEventListener('scroll', handleScrollSection);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -116,19 +116,19 @@ function App() {
           {/* Glassmorphism card for main content */}
           <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-16 shadow-2xl">
           <div className="mb-20">
-            <div className="w-28 h-28 bg-gradient-to-br from-[#307672] to-[#144D53] rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg">
-              <Brain className="w-14 h-14 text-[#E4EDDB]" />
+            <div className="w-28 h-28 bg-white/20 backdrop-blur-md rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg border border-white/30">
+              <Brain className="w-14 h-14 text-white" />
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-light mb-12 text-[#E4EDDB] tracking-tight leading-none">
+            <h1 className="text-7xl md:text-9xl font-light mb-12 text-white tracking-tight leading-none drop-shadow-lg">
               Your Name Here
             </h1>
             
             <div className="space-y-6 mb-20">
-              <p className="text-3xl md:text-4xl font-normal text-[#307672] tracking-wide">
+              <p className="text-3xl md:text-4xl font-normal text-white/90 tracking-wide drop-shadow-md">
                 AI/ML Engineer
               </p>
-              <p className="text-xl text-[#E4EDDB]/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
                 Computer Science @ Nile University — Building intelligent systems that bridge data and human understanding
               </p>
             </div>
@@ -137,11 +137,11 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-8 justify-center mb-24">
             <button 
               onClick={() => scrollToSection('projects')}
-              className="bg-[#307672] hover:bg-[#307672]/80 px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 border border-[#307672] hover:shadow-lg"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-md px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 border border-white/30 hover:border-white/50 text-white hover:shadow-lg rounded-lg"
             >
               View Work
             </button>
-            <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
+            <button className="border border-white/30 hover:border-white/50 px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-white/10 backdrop-blur-md text-white rounded-lg">
               <Download className="w-5 h-5" />
               Resume
             </button>
@@ -149,10 +149,11 @@ function App() {
 
           <div className="animate-bounce mt-8">
             <ChevronDown 
-              className="w-8 h-8 text-[#E4EDDB]/50 mx-auto cursor-pointer hover:text-[#307672] transition-colors duration-300"
+              className="w-8 h-8 text-white/70 mx-auto cursor-pointer hover:text-white transition-colors duration-300 drop-shadow-md"
               onClick={() => scrollToSection('about')}
             />
           </div>
+        </div>
         </div>
       </section>
 
@@ -562,19 +563,19 @@ function App() {
                     <div key={skill} className="flex items-start gap-4">
                       <div className="w-3 h-3 bg-[#307672] rounded-full mt-2"></div>
                       <span className="font-normal text-[#E4EDDB] leading-relaxed text-lg">{skill}</span>
-              <div className="w-28 h-28 bg-white/20 backdrop-blur-md rounded-full mx-auto mb-16 flex items-center justify-center shadow-lg border border-white/30">
-                <Brain className="w-14 h-14 text-white" />
+                    </div>
+                  ))}
                 </div>
               </div>
-              <h1 className="text-7xl md:text-9xl font-light mb-12 text-white tracking-tight leading-none drop-shadow-lg">
+              <div>
                 <h4 className="font-normal text-[#307672] mb-8 tracking-wide text-xl">Languages & Interests</h4>
                 <div className="space-y-6 mb-10">
                   <div className="flex items-start gap-4">
                     <div className="w-3 h-3 bg-[#307672] rounded-full mt-2"></div>
-                <p className="text-3xl md:text-4xl font-normal text-white/90 tracking-wide drop-shadow-md">
+                    <span className="font-normal text-[#E4EDDB] leading-relaxed text-lg">Arabic (Native), English (Fluent)</span>
                   </div>
                 </div>
-                <p className="text-xl text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+                <p className="text-xl text-[#E4EDDB]/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed">
                   <span className="text-[#307672]">Beyond Code:</span> Graphic design reviewer at NU Book Club, combining aesthetic sensibility with technical precision. Gaming and digital design fuel creative problem-solving approaches.
                 </p>
               </div>
@@ -583,7 +584,7 @@ function App() {
         </div>
       </section>
 
-                className="bg-white/20 hover:bg-white/30 backdrop-blur-md px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 border border-white/30 hover:border-white/50 text-white hover:shadow-lg rounded-lg"
+      {/* Future Vision Section */}
       <section className="py-32 px-8 bg-[#144D53]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-5xl font-light mb-16 text-[#E4EDDB] tracking-tight">
@@ -612,16 +613,15 @@ function App() {
             </button>
             <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
               <Linkedin className="w-6 h-6" />
-              <button className="border border-white/30 hover:border-white/50 px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-white/10 backdrop-blur-md text-white rounded-lg">
+              LinkedIn
             </button>
             <button className="border border-[#E4EDDB]/30 hover:border-[#307672] px-16 py-5 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-4 hover:bg-[#307672]/10">
               <Github className="w-6 h-6" />
               GitHub
-          </div>
             </button>
           </div>
           
-              className="w-8 h-8 text-white/70 mx-auto cursor-pointer hover:text-white transition-colors duration-300 drop-shadow-md"
+          <div className="text-[#E4EDDB]/70 space-y-4 text-lg font-normal">
             <p>📍 Nile University, Egypt</p>
             <p>💼 Open to internships, research opportunities, and collaborations</p>
           </div>
