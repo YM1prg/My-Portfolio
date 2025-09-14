@@ -1,8 +1,10 @@
 import { Award, Brain, Briefcase, ChevronDown, Code, Cpu, Database, Download, ExternalLink, Github, Globe, Leaf, Lightbulb, Linkedin, Mail, User } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScrollSection = () => {
@@ -22,6 +24,10 @@ function App() {
     return () => window.removeEventListener('scroll', handleScrollSection);
   }, []);
 
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -36,56 +42,111 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-800 text-white min-h-screen font-serif relative">
+    <div className={`min-h-screen font-serif relative transition-all duration-700 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-800 text-white' 
+        : 'bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 text-slate-800'
+    }`}>
       {/* Nature-inspired background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Organic light sources */}
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-radial from-emerald-500/15 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-32 w-80 h-80 bg-gradient-radial from-green-500/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-radial from-lime-500/8 to-transparent rounded-full blur-3xl"></div>
+        <div className={`absolute top-20 left-20 w-96 h-96 bg-gradient-radial rounded-full blur-3xl transition-all duration-700 ${
+          isDarkMode ? 'from-emerald-500/15 to-transparent' : 'from-emerald-400/25 to-transparent'
+        }`}></div>
+        <div className={`absolute bottom-40 right-32 w-80 h-80 bg-gradient-radial rounded-full blur-3xl transition-all duration-700 ${
+          isDarkMode ? 'from-green-500/10 to-transparent' : 'from-green-400/20 to-transparent'
+        }`}></div>
+        <div className={`absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-radial rounded-full blur-3xl transition-all duration-700 ${
+          isDarkMode ? 'from-lime-500/8 to-transparent' : 'from-lime-400/15 to-transparent'
+        }`}></div>
 
         {/* Static leaf decorations */}
-        <div className="absolute top-32 left-16 opacity-20">
-          <Leaf className="w-8 h-8 text-emerald-400 transform rotate-45" />
+        <div className={`absolute top-32 left-16 transition-all duration-700 ${
+          isDarkMode ? 'opacity-20' : 'opacity-30'
+        }`}>
+          <Leaf className={`w-8 h-8 transform rotate-45 transition-colors duration-700 ${
+            isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+          }`} />
         </div>
-        <div className="absolute top-64 right-24 opacity-15">
-          <Leaf className="w-6 h-6 text-green-400 transform -rotate-12" />
+        <div className={`absolute top-64 right-24 transition-all duration-700 ${
+          isDarkMode ? 'opacity-15' : 'opacity-25'
+        }`}>
+          <Leaf className={`w-6 h-6 transform -rotate-12 transition-colors duration-700 ${
+            isDarkMode ? 'text-green-400' : 'text-green-600'
+          }`} />
         </div>
-        <div className="absolute bottom-80 left-32 opacity-25">
-          <Leaf className="w-10 h-10 text-lime-400 transform rotate-75" />
+        <div className={`absolute bottom-80 left-32 transition-all duration-700 ${
+          isDarkMode ? 'opacity-25' : 'opacity-35'
+        }`}>
+          <Leaf className={`w-10 h-10 transform rotate-75 transition-colors duration-700 ${
+            isDarkMode ? 'text-lime-400' : 'text-lime-600'
+          }`} />
         </div>
-        <div className="absolute bottom-32 right-48 opacity-18">
-          <Leaf className="w-7 h-7 text-emerald-300 transform -rotate-30" />
+        <div className={`absolute bottom-32 right-48 transition-all duration-700 ${
+          isDarkMode ? 'opacity-18' : 'opacity-28'
+        }`}>
+          <Leaf className={`w-7 h-7 transform -rotate-30 transition-colors duration-700 ${
+            isDarkMode ? 'text-emerald-300' : 'text-emerald-500'
+          }`} />
         </div>
-        <div className="absolute top-96 left-2/3 opacity-12">
-          <Leaf className="w-5 h-5 text-green-300 transform rotate-120" />
+        <div className={`absolute top-96 left-2/3 transition-all duration-700 ${
+          isDarkMode ? 'opacity-12' : 'opacity-22'
+        }`}>
+          <Leaf className={`w-5 h-5 transform rotate-120 transition-colors duration-700 ${
+            isDarkMode ? 'text-green-300' : 'text-green-500'
+          }`} />
         </div>
 
         {/* Natural texture overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/30 via-transparent to-green-950/20"></div>
+        <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-700 ${
+          isDarkMode 
+            ? 'from-emerald-950/30 via-transparent to-green-950/20' 
+            : 'from-emerald-100/40 via-transparent to-green-100/30'
+        }`}></div>
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/10 backdrop-blur-xl border-b border-emerald-500/20 z-50 transition-all duration-300">
+      <nav className={`fixed top-0 w-full backdrop-blur-xl border-b z-50 transition-all duration-700 ${
+        isDarkMode 
+          ? 'bg-black/10 border-emerald-500/20' 
+          : 'bg-white/10 border-emerald-600/30'
+      }`}>
         <div className="max-w-6xl mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-normal tracking-wide text-white flex items-center gap-3">
-              <Brain className="w-12 h-12 text-emerald-400" />
+            <div className={`text-2xl font-normal tracking-wide flex items-center gap-3 transition-colors duration-700 ${
+              isDarkMode ? 'text-white' : 'text-slate-800'
+            }`}>
+              <Brain className={`w-12 h-12 transition-colors duration-700 ${
+                isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+              }`} />
               Portfolio
             </div>
-            <div className="hidden md:flex space-x-12">
+            <div className="hidden md:flex space-x-12 items-center">
               {['About', 'Projects', 'Experience', 'Skills', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-lg font-normal tracking-wide transition-colors duration-300 ${activeSection === item.toLowerCase()
-                    ? 'text-emerald-300'
-                    : 'text-white/70 hover:text-emerald-200'
+                  className={`text-lg font-normal tracking-wide transition-colors duration-700 ${
+                    activeSection === item.toLowerCase()
+                      ? (isDarkMode ? 'text-emerald-300' : 'text-emerald-600')
+                      : (isDarkMode ? 'text-white/70 hover:text-emerald-200' : 'text-slate-600 hover:text-emerald-500')
                     }`}
                 >
                   {item}
                 </button>
               ))}
+              
+              {/* Theme Toggle Button */}
+              <button
+                onClick={toggleTheme}
+                className={`p-3 rounded-full backdrop-blur-md border transition-all duration-700 hover:scale-110 ${
+                  isDarkMode 
+                    ? 'bg-emerald-500/20 border-emerald-500/30 hover:bg-emerald-500/30 text-emerald-300' 
+                    : 'bg-emerald-100/50 border-emerald-300/50 hover:bg-emerald-200/50 text-emerald-700'
+                }`}
+              >
+                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
             </div>
           </div>
         </div>
@@ -94,24 +155,56 @@ function App() {
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center px-8 relative py-10">
         {/* Floating natural elements */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-emerald-500/10 backdrop-blur-md rounded-full border border-emerald-500/30 flex items-center justify-center">
-          <Leaf className="w-8 h-8 text-emerald-400" />
+        <div className={`absolute top-20 left-20 w-32 h-32 backdrop-blur-md rounded-full border flex items-center justify-center transition-all duration-700 ${
+          isDarkMode 
+            ? 'bg-emerald-500/10 border-emerald-500/30' 
+            : 'bg-emerald-200/20 border-emerald-400/40'
+        }`}>
+          <Leaf className={`w-8 h-8 transition-colors duration-700 ${
+            isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+          }`} />
         </div>
-        <div className="absolute bottom-40 right-32 w-24 h-24 bg-green-500/10 backdrop-blur-md rounded-full border border-green-500/30 flex items-center justify-center">
-          <Brain className="w-6 h-6 text-green-400" />
+        <div className={`absolute bottom-40 right-32 w-24 h-24 backdrop-blur-md rounded-full border flex items-center justify-center transition-all duration-700 ${
+          isDarkMode 
+            ? 'bg-green-500/10 border-green-500/30' 
+            : 'bg-green-200/20 border-green-400/40'
+        }`}>
+          <Brain className={`w-6 h-6 transition-colors duration-700 ${
+            isDarkMode ? 'text-green-400' : 'text-green-600'
+          }`} />
         </div>
-        <div className="absolute top-1/2 right-20 w-16 h-16 bg-lime-500/10 backdrop-blur-md rounded-full border border-lime-500/30 flex items-center justify-center">
-          <Code className="w-4 h-4 text-lime-400" />
+        <div className={`absolute top-1/2 right-20 w-16 h-16 backdrop-blur-md rounded-full border flex items-center justify-center transition-all duration-700 ${
+          isDarkMode 
+            ? 'bg-lime-500/10 border-lime-500/30' 
+            : 'bg-lime-200/20 border-lime-400/40'
+        }`}>
+          <Code className={`w-4 h-4 transition-colors duration-700 ${
+            isDarkMode ? 'text-lime-400' : 'text-lime-600'
+          }`} />
         </div>
 
         <div className="text-center max-w-4xl relative z-20">
-          <div className="bg-black/20 backdrop-blur-xl rounded-3xl border border-emerald-500/30 p-16 shadow-2xl relative overflow-hidden">
+          <div className={`backdrop-blur-xl rounded-3xl border p-16 shadow-2xl relative overflow-hidden transition-all duration-700 ${
+            isDarkMode 
+              ? 'bg-black/20 border-emerald-500/30' 
+              : 'bg-white/20 border-emerald-400/40'
+          }`}>
             {/* Natural pattern overlay */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-4 left-4"><Leaf className="w-4 h-4" /></div>
-              <div className="absolute top-8 right-8"><Leaf className="w-3 h-3 transform rotate-45" /></div>
-              <div className="absolute bottom-6 left-12"><Leaf className="w-5 h-5 transform -rotate-12" /></div>
-              <div className="absolute bottom-4 right-4"><Leaf className="w-4 h-4 transform rotate-90" /></div>
+            <div className={`absolute inset-0 transition-opacity duration-700 ${
+              isDarkMode ? 'opacity-5' : 'opacity-10'
+            }`}>
+              <div className="absolute top-4 left-4"><Leaf className={`w-4 h-4 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-slate-600'
+              }`} /></div>
+              <div className="absolute top-8 right-8"><Leaf className={`w-3 h-3 transform rotate-45 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-slate-600'
+              }`} /></div>
+              <div className="absolute bottom-6 left-12"><Leaf className={`w-5 h-5 transform -rotate-12 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-slate-600'
+              }`} /></div>
+              <div className="absolute bottom-4 right-4"><Leaf className={`w-4 h-4 transform rotate-90 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-slate-600'
+              }`} /></div>
             </div>
 
             <div className="relative z-10 py-10">
@@ -120,10 +213,18 @@ function App() {
                   {/* Profile Image Container */}
                   <div className="relative group">
                     {/* Glowing background effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 to-green-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 scale-110"></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 scale-110 ${
+                      isDarkMode 
+                        ? 'from-emerald-400/30 to-green-400/20' 
+                        : 'from-emerald-500/40 to-green-500/30'
+                    }`}></div>
 
                     {/* Main image container */}
-                    <div className="relative w-48 h-48 bg-emerald-500/20 backdrop-blur-md rounded-full border-2 border-emerald-500/40 overflow-hidden shadow-2xl">
+                    <div className={`relative w-48 h-48 backdrop-blur-md rounded-full border-2 overflow-hidden shadow-2xl transition-all duration-700 ${
+                      isDarkMode 
+                        ? 'bg-emerald-500/20 border-emerald-500/40' 
+                        : 'bg-emerald-200/30 border-emerald-400/50'
+                    }`}>
                       <img
                         src="./elements/img1.jpg"
                         alt="Yahya Mohamed"
@@ -131,34 +232,64 @@ function App() {
                       />
 
                       {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent"></div>
+                      <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-700 ${
+                        isDarkMode 
+                          ? 'from-emerald-500/10 to-transparent' 
+                          : 'from-emerald-400/15 to-transparent'
+                      }`}></div>
                     </div>
 
                     {/* Decorative leaf elements */}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-emerald-500/20 backdrop-blur-md rounded-full border border-emerald-500/30 flex items-center justify-center animate-pulse">
-                      <Leaf className="w-5 h-5 text-emerald-300" />
+                    <div className={`absolute -top-3 -right-3 w-8 h-8 backdrop-blur-md rounded-full border flex items-center justify-center animate-pulse transition-all duration-700 ${
+                      isDarkMode 
+                        ? 'bg-emerald-500/20 border-emerald-500/30' 
+                        : 'bg-emerald-200/30 border-emerald-400/40'
+                    }`}>
+                      <Leaf className={`w-5 h-5 transition-colors duration-700 ${
+                        isDarkMode ? 'text-emerald-300' : 'text-emerald-600'
+                      }`} />
                     </div>
-                    <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-green-500/20 backdrop-blur-md rounded-full border border-green-500/30 flex items-center justify-center">
-                      <Leaf className="w-4 h-4 text-green-300 transform rotate-45" />
+                    <div className={`absolute -bottom-2 -left-2 w-6 h-6 backdrop-blur-md rounded-full border flex items-center justify-center transition-all duration-700 ${
+                      isDarkMode 
+                        ? 'bg-green-500/20 border-green-500/30' 
+                        : 'bg-green-200/30 border-green-400/40'
+                    }`}>
+                      <Leaf className={`w-4 h-4 transform rotate-45 transition-colors duration-700 ${
+                        isDarkMode ? 'text-green-300' : 'text-green-600'
+                      }`} />
                     </div>
 
                     {/* Floating particles */}
-                    <div className="absolute top-4 left-4 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping"></div>
-                    <div className="absolute bottom-6 right-6 w-1.5 h-1.5 bg-green-400/60 rounded-full animate-ping delay-300"></div>
+                    <div className={`absolute top-4 left-4 w-2 h-2 rounded-full animate-ping transition-colors duration-700 ${
+                      isDarkMode ? 'bg-emerald-400/60' : 'bg-emerald-500/70'
+                    }`}></div>
+                    <div className={`absolute bottom-6 right-6 w-1.5 h-1.5 rounded-full animate-ping delay-300 transition-colors duration-700 ${
+                      isDarkMode ? 'bg-green-400/60' : 'bg-green-500/70'
+                    }`}></div>
                   </div>
                 </div>
 
-                <h1 className="text-6xl md:text-8xl font-light mb-8 text-white tracking-tight leading-none">
+                <h1 className={`text-6xl md:text-8xl font-light mb-8 tracking-tight leading-none transition-colors duration-700 ${
+                  isDarkMode ? 'text-white' : 'text-slate-800'
+                }`}>
                   Yahya Mohamed
                 </h1>
 
                 <div className="space-y-4 mb-16">
-                  <p className="text-2xl md:text-3xl font-normal text-emerald-400 tracking-wide flex items-center justify-center gap-3">
-                    <Leaf className="w-6 h-6 opacity-60" />
+                  <p className={`text-2xl md:text-3xl font-normal tracking-wide flex items-center justify-center gap-3 transition-colors duration-700 ${
+                    isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+                  }`}>
+                    <Leaf className={`w-6 h-6 opacity-60 transition-colors duration-700 ${
+                      isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+                    }`} />
                     AI/ML Engineer
-                    <Leaf className="w-6 h-6 opacity-60 transform rotate-180" />
+                    <Leaf className={`w-6 h-6 opacity-60 transform rotate-180 transition-colors duration-700 ${
+                      isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+                    }`} />
                   </p>
-                  <p className="text-lg text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed">
+                  <p className={`text-lg font-normal tracking-wide max-w-3xl mx-auto leading-relaxed transition-colors duration-700 ${
+                    isDarkMode ? 'text-white/80' : 'text-slate-700'
+                  }`}>
                     Computer Science @ Nile University — Building intelligent systems that bridge data and human understanding through nature-inspired solutions
                   </p>
                 </div>
@@ -167,19 +298,35 @@ function App() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                 <button
                   onClick={() => scrollToSection('projects')}
-                  className="bg-emerald-500/20 hover:bg-emerald-500/30 backdrop-blur-md px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 border border-emerald-500/40 hover:border-emerald-500/60 text-white rounded-lg flex items-center justify-center gap-3"
+                  className={`backdrop-blur-md px-12 py-4 text-lg font-normal tracking-wide transition-all duration-700 border rounded-lg flex items-center justify-center gap-3 ${
+                    isDarkMode 
+                      ? 'bg-emerald-500/20 hover:bg-emerald-500/30 border-emerald-500/40 hover:border-emerald-500/60 text-white' 
+                      : 'bg-emerald-100/50 hover:bg-emerald-200/60 border-emerald-400/50 hover:border-emerald-500/70 text-slate-800'
+                  }`}
                 >
-                  <Leaf className="w-5 h-5" />
+                  <Leaf className={`w-5 h-5 transition-colors duration-700 ${
+                    isDarkMode ? 'text-white' : 'text-slate-800'
+                  }`} />
                   View Work
                 </button>
-                <button className="border border-emerald-500/30 hover:border-emerald-500/50 px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 hover:bg-emerald-500/10 backdrop-blur-md text-white rounded-lg">
-                  <Download className="w-5 h-5" />
+                <button className={`border px-12 py-4 text-lg font-normal tracking-wide transition-all duration-700 flex items-center justify-center gap-3 backdrop-blur-md rounded-lg ${
+                  isDarkMode 
+                    ? 'border-emerald-500/30 hover:border-emerald-500/50 hover:bg-emerald-500/10 text-white' 
+                    : 'border-emerald-400/40 hover:border-emerald-500/60 hover:bg-emerald-100/30 text-slate-800'
+                }`}>
+                  <Download className={`w-5 h-5 transition-colors duration-700 ${
+                    isDarkMode ? 'text-white' : 'text-slate-800'
+                  }`} />
                   Resume
                 </button>
               </div>
 
               <ChevronDown
-                className="w-8 h-8 text-emerald-400/70 mx-auto cursor-pointer hover:text-emerald-400 transition-colors duration-300"
+                className={`w-8 h-8 mx-auto cursor-pointer transition-colors duration-700 ${
+                  isDarkMode 
+                    ? 'text-emerald-400/70 hover:text-emerald-400' 
+                    : 'text-emerald-600/70 hover:text-emerald-600'
+                }`}
                 onClick={() => scrollToSection('about')}
               />
             </div>
