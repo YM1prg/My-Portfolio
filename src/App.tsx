@@ -281,19 +281,19 @@ function App() {
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
+                      <span className="font-normal text-white/90 leading-relaxed">Healthcare AI & stroke prediction</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
                       <span className="font-normal text-white/90 leading-relaxed">End-to-end ML pipeline development</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Generative AI integration</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Generative AI web applications</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Healthcare AI applications</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Bio-inspired algorithms</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Data visualization & analysis</span>
                     </div>
                   </div>
                 </div>
