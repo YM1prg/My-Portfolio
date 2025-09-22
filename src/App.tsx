@@ -309,19 +309,19 @@ function App() {
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Team collaboration</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Ethical AI development</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Problem solving</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Sustainable technology</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Adaptability</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Accessible solutions</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Project management</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Natural harmony</span>
                     </div>
                   </div>
                 </div>
@@ -414,16 +414,16 @@ function App() {
                   </h4>
                   <div className="grid grid-cols-2 gap-8 text-center mb-6 relative z-10">
                     <div>
-                      <div className="text-3xl font-normal text-emerald-400 mb-2">92%</div>
+                      <div className="text-3xl font-normal text-sky-600 dark:text-emerald-400 mb-2">95.2%</div>
                       <div className="text-sm font-normal text-white/70 tracking-wide">Model Accuracy</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-normal text-emerald-400 mb-2">40%</div>
-                      <div className="text-sm font-normal text-white/70 tracking-wide">Faster Processing</div>
+                      <div className="text-3xl font-normal text-sky-600 dark:text-emerald-400 mb-2">94%</div>
+                      <div className="text-sm font-normal text-slate-600 dark:text-white/70 tracking-wide">Model Recall</div>
                     </div>
                   </div>
                   <p className="text-white font-normal leading-relaxed text-center relative z-10">
-                    Delivered actionable insights identifying key risk factors for preventive care focus
+                    Selected XGBoost as optimal model after rigorous comparison, generating feature importance plots and ROC curves for clinically relevant insights
                   </p>
                 </div>
 
