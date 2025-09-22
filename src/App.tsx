@@ -281,19 +281,19 @@ function App() {
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Healthcare AI & stroke prediction</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
                       <span className="font-normal text-white/90 leading-relaxed">End-to-end ML pipeline development</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Generative AI web applications</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Generative AI integration</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Data visualization & analysis</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Healthcare AI applications</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
+                      <span className="font-normal text-white/90 leading-relaxed">Bio-inspired algorithms</span>
                     </div>
                   </div>
                 </div>
@@ -309,19 +309,19 @@ function App() {
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Ethical AI development</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Team collaboration</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Sustainable technology</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Problem solving</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Accessible solutions</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Adaptability</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Natural harmony</span>
+                      <span className="font-normal text-white/90 leading-relaxed">Project management</span>
                     </div>
                   </div>
                 </div>
