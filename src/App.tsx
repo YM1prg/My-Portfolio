@@ -27,12 +27,12 @@ function App() {
   };
 
   const skills = {
-    'Programming Languages': ['Python', 'JavaScript', 'C++', 'HTML/CSS', 'SQL'],
-    'ML/AI': ['Supervised Learning', 'Unsupervised Learning', 'Feature Engineering', 'Model Evaluation', 'Neural Networks'],
-    'Data Analysis': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Statistical Analysis'],
-    'Generative AI': ['Google Gemini API', 'Prompt Engineering', 'LLM Integration', 'AI Ethics'],
-    'Web Development': ['React', 'Flask', 'Django', 'REST APIs', 'Full-Stack Architecture'],
-    'Tools & Platforms': ['Git/GitHub', 'Jupyter', 'VS Code', 'Docker', 'Cloud Platforms']
+    'Programming Languages': ['Python', 'Java', 'C', 'JavaScript', 'C#'],
+    'ML/AI': ['Supervised Learning', 'Unsupervised Learning', 'Feature Engineering', 'Model Evaluation', 'Scikit-learn', 'Neural Networks'],
+    'Data Analysis': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Data Cleaning'],
+    'Generative AI': ['Google Gemini API', 'OpenAI API', 'Prompt Engineering', 'AI Integration'],
+    'Web Development': ['React', 'Flask', 'Django', 'Frontend-Backend Integration'],
+    'Tools & Platforms': ['Git/GitHub', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Arduino IDE']
   };
 
   return (
@@ -155,11 +155,11 @@ function App() {
                 <div className="space-y-4 mb-16">
                   <p className="text-2xl md:text-3xl font-normal text-emerald-400 tracking-wide flex items-center justify-center gap-3">
                     <Leaf className="w-6 h-6 opacity-60" />
-                    AI/ML Engineer
+                    Computer Science Junior
                     <Leaf className="w-6 h-6 opacity-60 transform rotate-180" />
                   </p>
                   <p className="text-lg text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed">
-                    Computer Science @ Nile University — Building intelligent systems that bridge data and human understanding through nature-inspired solutions
+                    Computer Science @ Nile University (GPA: 3.76) — Passionate about leveraging AI and data analysis to solve complex problems with hands-on ML experience
                   </p>
                 </div>
               </div>
@@ -256,15 +256,15 @@ function App() {
             <div className="lg:col-span-8 space-y-10">
               <div className="space-y-6">
                 <p className="text-xl font-normal text-white/90 leading-relaxed">
-                  I'm a Computer Science sophomore at Nile University driven by the belief that data tells profound stories—I help decode them into actionable insights that solve real problems through nature-inspired computational approaches.
+                  I'm a Computer Science junior at Nile University (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. I'm passionate about leveraging AI and data analysis to solve complex problems.
                 </p>
 
                 <p className="text-lg font-normal text-white/80 leading-relaxed">
-                  My journey began with a fundamental question: "How can intelligent systems make healthcare more accessible?" This inquiry has guided me through machine learning pipelines, generative AI applications, and hardware integration projects that mirror natural problem-solving patterns.
+                  My journey has led me through intensive internships where I've delivered impactful projects in healthcare AI, including stroke risk prediction and diamond price modeling. I'm proficient in Python, Scikit-learn, and data visualization.
                 </p>
 
                 <p className="text-lg font-normal text-white/80 leading-relaxed">
-                  I build ethical, impactful AI solutions that serve underserved communities—developing diagnostic tools for remote healthcare and creating educational platforms powered by generative AI, all while maintaining harmony between technological advancement and natural principles.
+                  I build end-to-end ML pipelines and full-stack applications, combining technical expertise with creative problem-solving. My experience spans from healthcare data analysis to generative AI web applications.
                 </p>
               </div>
 
