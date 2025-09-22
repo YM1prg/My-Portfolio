@@ -414,16 +414,16 @@ function App() {
                   </h4>
                   <div className="grid grid-cols-2 gap-8 text-center mb-6 relative z-10">
                     <div>
-                      <div className="text-3xl font-normal text-sky-600 dark:text-emerald-400 mb-2">95.2%</div>
+                      <div className="text-3xl font-normal text-emerald-400 mb-2">92%</div>
                       <div className="text-sm font-normal text-white/70 tracking-wide">Model Accuracy</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-normal text-sky-600 dark:text-emerald-400 mb-2">94%</div>
-                      <div className="text-sm font-normal text-slate-600 dark:text-white/70 tracking-wide">Model Recall</div>
+                      <div className="text-3xl font-normal text-emerald-400 mb-2">40%</div>
+                      <div className="text-sm font-normal text-white/70 tracking-wide">Faster Processing</div>
                     </div>
                   </div>
                   <p className="text-white font-normal leading-relaxed text-center relative z-10">
-                    Selected XGBoost as optimal model after rigorous comparison, generating feature importance plots and ROC curves for clinically relevant insights
+                    Delivered actionable insights identifying key risk factors for preventive care focus
                   </p>
                 </div>
 
@@ -692,7 +692,7 @@ function App() {
           </div>
           <p className="text-white/60 font-normal tracking-wide relative z-10 flex items-center justify-center gap-3">
             <Leaf className="w-4 h-4 text-emerald-400 opacity-40" />
-            © 2025 Yahya Mohamed. Built with React, TypeScript, and passion for sustainable AI.
+            © 2025 Yahya Mohamed. Built with React, TypeScript, and passion for impactful AI/ML solutions.
             <Leaf className="w-4 h-4 text-emerald-400 opacity-40 transform rotate-180" />
           </p>
         </div>
