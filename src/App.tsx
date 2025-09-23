@@ -28,11 +28,11 @@ function App() {
 
   const skills = {
     'Programming Languages': ['Python', 'Java', 'C', 'JavaScript', 'C#'],
-    'ML/AI': ['Supervised Learning', 'Unsupervised Learning', 'Feature Engineering', 'Model Evaluation', 'Scikit-learn', 'Neural Networks'],
-    'Data Analysis': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Data Cleaning'],
-    'Generative AI': ['Google Gemini API', 'OpenAI API', 'Prompt Engineering', 'AI Integration'],
-    'Web Development': ['React', 'Flask', 'Django', 'Frontend-Backend Integration'],
-    'Tools & Platforms': ['Git/GitHub', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Arduino IDE']
+    'Machine Learning & AI': ['Supervised Learning (Classification, Regression)', 'Unsupervised Learning (Clustering)', 'Feature Engineering', 'Model Evaluation', 'Scikit-learn'],
+    'Data Analysis & Visualization': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Exploratory Data Analysis (EDA)', 'Data Cleaning'],
+    'Generative AI & APIs': ['Google Gemini', 'OpenAI API', 'Prompt Engineering', 'AI Integration'],
+    'Tools & Platforms': ['Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Arduino IDE'],
+    'Web Development': ['React', 'Python (Flask/Django)', 'Frontend-Backend Integration']
   };
 
   return (
@@ -155,11 +155,11 @@ function App() {
                 <div className="space-y-4 mb-16">
                   <p className="text-2xl md:text-3xl font-normal text-emerald-400 tracking-wide flex items-center justify-center gap-3">
                     <Leaf className="w-6 h-6 opacity-60" />
-                    Computer Science Junior
+                    Computer Science Sophomore
                     <Leaf className="w-6 h-6 opacity-60 transform rotate-180" />
                   </p>
                   <p className="text-lg text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed">
-                    Computer Science @ Nile University (GPA: 3.76) — Passionate about leveraging AI and data analysis to solve complex problems with hands-on ML experience
+                    Computer Science sophomore (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. Passionate about leveraging AI and data analysis to solve complex problems. Proficient in Python, Scikit-learn, and data visualization, with a proven ability to deliver impactful projects demonstrated through intensive internships.
                   </p>
                 </div>
               </div>
@@ -256,15 +256,15 @@ function App() {
             <div className="lg:col-span-8 space-y-10">
               <div className="space-y-6">
                 <p className="text-xl font-normal text-white/90 leading-relaxed">
-                  I'm a Computer Science junior at Nile University (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. I'm passionate about leveraging AI and data analysis to solve complex problems.
+                  I'm a Computer Science sophomore at Nile University (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. I'm passionate about leveraging AI and data analysis to solve complex problems.
                 </p>
 
                 <p className="text-lg font-normal text-white/80 leading-relaxed">
-                  My journey has led me through intensive internships where I've delivered impactful projects in healthcare AI, including stroke risk prediction and diamond price modeling. I'm proficient in Python, Scikit-learn, and data visualization.
+                  My journey has led me through intensive internships where I've delivered impactful projects in healthcare AI, including stroke risk prediction and diamond price modeling. I'm proficient in Python, Scikit-learn, and data visualization, with a proven ability to deliver impactful projects demonstrated through intensive internships.
                 </p>
 
                 <p className="text-lg font-normal text-white/80 leading-relaxed">
-                  I build end-to-end ML pipelines and full-stack applications, combining technical expertise with creative problem-solving. My experience spans from healthcare data analysis to generative AI web applications.
+                  I build end-to-end ML pipelines and full-stack applications, combining technical expertise with creative problem-solving. My experience spans from healthcare data analysis to generative AI web applications with cross-platform deployment capabilities.
                 </p>
               </div>
 
@@ -349,17 +349,17 @@ function App() {
               <div className="space-y-8">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 bg-emerald-500/20 backdrop-blur-md flex items-center justify-center rounded-lg border border-emerald-500/30 relative">
-                    <Database className="w-6 h-6 text-emerald-400" />
+                    <Brain className="w-6 h-6 text-emerald-400" />
                     <div className="absolute -top-1 -right-1">
                       <Leaf className="w-3 h-3 text-emerald-300 opacity-70" />
                     </div>
                   </div>
                   <div>
                     <h3 className="text-2xl font-normal text-white tracking-wide">
-                      ML Heart Disease Predictor
+                      Machine Learning Stroke Risk Predictor
                     </h3>
                     <p className="text-emerald-400 font-normal tracking-wide">
-                      Sprints x Microsoft Summer Camp 2025
+                      National Telecommunication Institute (NTI)
                     </p>
                   </div>
                 </div>
@@ -387,14 +387,14 @@ function App() {
                       Technical Approach
                     </h4>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {['Python', 'Scikit-learn', 'Pandas', 'Random Forest', 'K-Means', 'PCA'].map(tech => (
+                      {['Python', 'XGBoost', 'SMOTE', 'Scikit-learn', 'Matplotlib', 'Seaborn'].map(tech => (
                         <span key={tech} className="bg-emerald-500/10 backdrop-blur-md px-3 py-1 text-sm font-normal tracking-wide text-white border border-emerald-500/30 rounded">
                           {tech}
                         </span>
                       ))}
                     </div>
                     <p className="text-white/90 font-normal leading-relaxed">
-                      Built complete end-to-end ML pipeline implementing supervised learning (Random Forest, SVM) and unsupervised techniques (K-Means clustering, PCA) to identify risk patterns and reduce dimensionality, inspired by natural pattern recognition.
+                      Achieved 95.2% accuracy and 94% recall by selecting XGBoost as the optimal model after rigorous comparison with other algorithms. Generated and interpreted feature importance plots and ROC curves using Matplotlib/Seaborn to provide clinically relevant insights.
                     </p>
                   </div>
                 </div>
@@ -414,16 +414,16 @@ function App() {
                   </h4>
                   <div className="grid grid-cols-2 gap-8 text-center mb-6 relative z-10">
                     <div>
-                      <div className="text-3xl font-normal text-emerald-400 mb-2">92%</div>
+                      <div className={`text-3xl font-normal mb-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-500'}`}>95.2%</div>
                       <div className="text-sm font-normal text-white/70 tracking-wide">Model Accuracy</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-normal text-emerald-400 mb-2">40%</div>
-                      <div className="text-sm font-normal text-white/70 tracking-wide">Faster Processing</div>
+                      <div className={`text-3xl font-normal mb-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-500'}`}>94%</div>
+                      <div className="text-sm font-normal text-white/70 tracking-wide">Model Recall</div>
                     </div>
                   </div>
                   <p className="text-white font-normal leading-relaxed text-center relative z-10">
-                    Delivered actionable insights identifying key risk factors for preventive care focus
+                    Delivered clinically relevant insights for stroke risk assessment and preventive healthcare
                   </p>
                 </div>
 
@@ -474,15 +474,15 @@ function App() {
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-normal text-white mb-3 tracking-wide">
-                  Machine Learning Intensive Program
+                  Machine Learning Internship
                 </h3>
                 <p className="text-emerald-400 font-normal tracking-wide mb-8">
-                  Sprints x Microsoft Summer Camp 2025
+                  National Telecommunication Institute (NTI) | September 2025
                 </p>
 
                 <div className="space-y-8">
                   <p className="text-lg font-normal text-white leading-relaxed">
-                    Completed intensive 6-week bootcamp-level training in machine learning and data science, working on real-world healthcare datasets with industry mentors from Microsoft, focusing on sustainable and nature-inspired AI solutions.
+                    Delivered two end-to-end machine learning projects, demonstrating proficiency in data preprocessing, model implementation, and performance tuning. Applied advanced unsupervised techniques, including K-Means clustering and Principal Component Analysis (PCA), to extract actionable insights from complex datasets.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-12">
@@ -492,9 +492,9 @@ function App() {
                         Key Achievements
                       </h4>
                       <div className="space-y-4">
-                        {['Built end-to-end ML pipeline with 92% accuracy', 'Mastered supervised & unsupervised learning techniques', 'Developed interpretable models for healthcare applications', 'Explored bio-inspired algorithm optimization'].map(achievement => (
+                        {['Delivered two end-to-end ML projects', 'Applied K-Means clustering and PCA techniques', 'Developed expertise in neural networks', 'Mastered data preprocessing and model tuning'].map(achievement => (
                           <div key={achievement} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
+                            <div className={`w-2 h-2 rounded-full mt-2 ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
                             <span className="font-normal text-white leading-relaxed">{achievement}</span>
                           </div>
                         ))}
@@ -507,8 +507,71 @@ function App() {
                         Skills Developed
                       </h4>
                       <div className="grid grid-cols-2 gap-3">
-                        {['Python', 'Scikit-learn', 'Pandas', 'Feature Engineering', 'Model Evaluation', 'Data Visualization', 'Statistical Analysis', 'Bio-inspired ML'].map(skill => (
-                          <span key={skill} className="bg-black/40 backdrop-blur-md px-3 py-2 text-sm font-normal text-white text-center tracking-wide border border-emerald-500/30 rounded">
+                        {['Python', 'K-Means', 'PCA', 'Neural Networks', 'Model Tuning', 'Data Preprocessing', 'Performance Evaluation', 'Complex Datasets'].map(skill => (
+                          <span key={skill} className={`bg-black/40 backdrop-blur-md px-3 py-2 text-sm font-normal text-white text-center tracking-wide border rounded ${isDarkMode ? 'border-emerald-500/30' : 'border-sky-500/30'}`}>
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Experience */}
+          <div className="mt-16 bg-black/30 backdrop-blur-md p-12 border border-emerald-500/30 rounded-lg relative overflow-hidden">
+            <div className="absolute top-4 right-4 opacity-5">
+              {isDarkMode ? <Leaf className="w-16 h-16" /> : <Cloud className="w-16 h-16" />}
+            </div>
+            <div className="absolute bottom-4 left-4 opacity-5">
+              {isDarkMode ? <Leaf className="w-12 h-12 transform rotate-45" /> : <Cloud className="w-12 h-12 transform rotate-45" />}
+            </div>
+            <div className="flex items-start gap-6 relative z-10">
+              <div className="w-16 h-16 bg-emerald-500/20 backdrop-blur-md flex items-center justify-center rounded-lg border border-emerald-500/30 relative">
+                <Briefcase className="w-8 h-8 text-emerald-400" />
+                <div className="absolute -top-2 -right-2">
+                  {isDarkMode ? <Leaf className="w-4 h-4 text-emerald-300 opacity-70" /> : <Cloud className="w-4 h-4 text-sky-300 opacity-70" />}
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-normal text-white mb-3 tracking-wide">
+                  AI & Machine Learning Summer Camp
+                </h3>
+                <p className={`font-normal tracking-wide mb-8 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                  Sprints x Microsoft | August 2025
+                </p>
+
+                <div className="space-y-8">
+                  <p className="text-lg font-normal text-white leading-relaxed">
+                    Developed and evaluated a complete machine learning pipeline to predict heart disease, utilizing both supervised and unsupervised learning techniques on a real-world dataset. Engineered features and performed comprehensive Exploratory Data Analysis (EDA) using Pandas, NumPy, and Seaborn to uncover critical data insights.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-12">
+                    <div className="space-y-4">
+                      <h4 className={`font-normal mb-6 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-600'}`}>
+                        <Brain className="w-4 h-4" />
+                        Key Achievements
+                      </h4>
+                      <div className="space-y-4">
+                        {['Complete ML pipeline for heart disease prediction', 'Comprehensive EDA with Pandas and NumPy', 'Feature engineering and data insights', 'Mastered data cleaning and model evaluation'].map(achievement => (
+                          <div key={achievement} className="flex items-start gap-3">
+                            <div className={`w-2 h-2 rounded-full mt-2 ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                            <span className="font-normal text-white leading-relaxed">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className={`font-normal mb-6 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-600'}`}>
+                        {isDarkMode ? <Leaf className="w-4 h-4" /> : <Cloud className="w-4 h-4" />}
+                        Technologies Used
+                      </h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        {['Python', 'Pandas', 'NumPy', 'Seaborn', 'Scikit-learn', 'EDA', 'Data Cleaning', 'Model Training'].map(skill => (
+                          <span key={skill} className={`bg-black/40 backdrop-blur-md px-3 py-2 text-sm font-normal text-white text-center tracking-wide border rounded ${isDarkMode ? 'border-emerald-500/30' : 'border-sky-500/30'}`}>
                             {skill}
                           </span>
                         ))}
@@ -575,12 +638,12 @@ function App() {
               <div>
                 <h4 className="font-normal text-emerald-400 mb-6 tracking-wide flex items-center gap-2">
                   <Brain className="w-4 h-4" />
-                  Professional Skills
+                  Soft Skills
                 </h4>
                 <div className="space-y-4">
-                  {['Problem-solving with natural patterns', 'Cross-functional collaboration', 'Technical communication', 'Sustainable project management', 'Bio-inspired design thinking'].map(skill => (
+                  {['Team Collaboration', 'Problem Solving', 'Adaptability', 'Communication', 'Project Management'].map(skill => (
                     <div key={skill} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
+                      <div className={`w-2 h-2 rounded-full mt-2 ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
                       <span className="font-normal text-white leading-relaxed">{skill}</span>
                     </div>
                   ))}
@@ -589,16 +652,20 @@ function App() {
               <div>
                 <h4 className="font-normal text-emerald-400 mb-6 tracking-wide flex items-center gap-2">
                   <Leaf className="w-4 h-4" />
-                  Languages & Philosophy
+                  Languages & Activities
                 </h4>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                    <span className="font-normal text-white leading-relaxed">Arabic (Native), English (Fluent)</span>
+                    <div className={`w-2 h-2 rounded-full mt-2 ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                    <span className="font-normal text-white leading-relaxed">Arabic (Native), English (Fluent – C1)</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className={`w-2 h-2 rounded-full mt-2 ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                    <span className="font-normal text-white leading-relaxed">Graphic designer reviewer at NU Book Club</span>
                   </div>
                 </div>
                 <p className="text-lg text-white/80 font-normal tracking-wide leading-relaxed">
-                  <span className="text-emerald-400">Beyond Code:</span> Graphic design reviewer at NU Book Club, finding harmony between natural aesthetics and digital precision. Gaming and nature photography inspire biomimetic approaches to algorithmic challenges.
+                  <span className={isDarkMode ? 'text-emerald-400' : 'text-sky-400'}>Interests:</span> Passionate about exploring emerging technologies in AI, web development, gaming, and digital design. Always seeking innovative solutions that bridge technology and creativity.
                 </p>
               </div>
             </div>
@@ -645,37 +712,37 @@ function App() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-            <button className="bg-emerald-500/80 hover:bg-emerald-500 px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 rounded relative overflow-hidden">
+            <a href="mailto:y.mohmed2312@nu.edu.eg" className={`px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 rounded relative overflow-hidden ${isDarkMode ? 'bg-emerald-500/80 hover:bg-emerald-500' : 'bg-sky-500/80 hover:bg-sky-500'}`}>
               <div className="absolute top-1 right-1 opacity-20">
                 <Leaf className="w-4 h-4" />
               </div>
               <Mail className="w-5 h-5 relative z-10" />
               <span className="relative z-10">Email</span>
-            </button>
-            <button className="border border-emerald-500/30 hover:border-emerald-500 px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 hover:bg-emerald-500/10 backdrop-blur-md rounded relative overflow-hidden">
+            </a>
+            <a href="https://www.linkedin.com/in/yahyamohmed" target="_blank" rel="noopener noreferrer" className={`border px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-md rounded relative overflow-hidden ${isDarkMode ? 'border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/10' : 'border-sky-500/30 hover:border-sky-500 hover:bg-sky-500/10'}`}>
               <div className="absolute top-1 right-1 opacity-20">
                 <Leaf className="w-4 h-4 transform rotate-45" />
               </div>
               <Linkedin className="w-5 h-5 relative z-10" />
               <span className="relative z-10">LinkedIn</span>
-            </button>
-            <button className="border border-emerald-500/30 hover:border-emerald-500 px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 hover:bg-emerald-500/10 backdrop-blur-md rounded relative overflow-hidden">
+            </a>
+            <a href="tel:+201062496165" className={`border px-12 py-4 text-lg font-normal tracking-wide transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-md rounded relative overflow-hidden ${isDarkMode ? 'border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/10' : 'border-sky-500/30 hover:border-sky-500 hover:bg-sky-500/10'}`}>
               <div className="absolute top-1 right-1 opacity-20">
                 <Leaf className="w-4 h-4 transform rotate-90" />
               </div>
-              <Github className="w-5 h-5 relative z-10" />
-              <span className="relative z-10">GitHub</span>
-            </button>
+              <User className="w-5 h-5 relative z-10" />
+              <span className="relative z-10">Phone</span>
+            </a>
           </div>
 
           <div className="text-white/70 space-y-3 font-normal flex flex-col items-center">
             <div className="flex items-center gap-2">
               <Leaf className="w-4 h-4 text-emerald-400 opacity-60" />
-              <span>Nile University, Egypt</span>
+              <span>y.mohmed2312@nu.edu.eg | +20 1062496165</span>
             </div>
             <div className="flex items-center gap-2">
               <Leaf className="w-4 h-4 text-emerald-400 opacity-60 transform rotate-45" />
-              <span>Open to internships, research opportunities, and sustainable tech collaborations</span>
+              <span>Nile University, Egypt | Open to internships and ML opportunities</span>
             </div>
           </div>
         </div>
