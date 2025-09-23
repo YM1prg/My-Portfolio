@@ -1,8 +1,9 @@
-import { Award, Brain, Briefcase, ChevronDown, Code, Cpu, Database, Download, ExternalLink, Github, Globe, Leaf, Lightbulb, Linkedin, Mail, User } from 'lucide-react';
+import { Award, Brain, Briefcase, ChevronDown, Cloud, Code, Cpu, Database, Download, ExternalLink, Github, Globe, Leaf, Lightbulb, Linkedin, Mail, Moon, Sun, User } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScrollSection = () => {
