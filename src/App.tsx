@@ -442,8 +442,241 @@ function App() {
             </div>
           </div>
 
-          {/* Additional projects would follow the same pattern... */}
-          {/* For brevity, I'll continue with the remaining sections */}
+          {/* Project 2: Diamond Price Prediction */}
+          <div className="mb-32">
+            <div className="grid md:grid-cols-2 gap-16 items-start">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={`w-12 h-12 backdrop-blur-md flex items-center justify-center rounded-lg border relative ${isDarkMode ? 'bg-emerald-500/20 border-emerald-500/30' : 'bg-sky-500/20 border-sky-500/30'}`}>
+                    <Database className={`w-6 h-6 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`} />
+                    <div className="absolute -top-1 -right-1">
+                      {isDarkMode ? <Leaf className="w-3 h-3 text-emerald-300 opacity-70" /> : <Cloud className="w-3 h-3 text-sky-300 opacity-70" />}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-normal text-white tracking-wide">
+                      💎 End-to-End ML Pipeline Diamond Price Prediction
+                    </h3>
+                    <p className={`font-normal tracking-wide ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                      National Telecommunication Institute (NTI)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className={`bg-black/20 backdrop-blur-md p-6 border rounded-lg relative overflow-hidden ${isDarkMode ? 'border-emerald-500/20' : 'border-sky-500/20'}`}>
+                    <div className="absolute top-2 right-2 opacity-5">
+                      {isDarkMode ? <Leaf className="w-6 h-6" /> : <Cloud className="w-6 h-6" />}
+                    </div>
+                    <h4 className={`font-normal mb-3 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                      <Lightbulb className="w-4 h-4" />
+                      Project Overview
+                    </h4>
+                    <p className="text-white/90 font-normal leading-relaxed">
+                      Built and optimized multiple regression models (SVM, Decision Tree, KNN) to accurately predict diamond prices from a real-world market dataset of 53,940 diamonds after cleaning.
+                    </p>
+                  </div>
+
+                  <div className={`bg-black/20 backdrop-blur-md p-6 border rounded-lg relative overflow-hidden ${isDarkMode ? 'border-emerald-500/20' : 'border-sky-500/20'}`}>
+                    <div className="absolute top-2 right-2 opacity-5">
+                      {isDarkMode ? <Leaf className="w-6 h-6 transform rotate-45" /> : <Cloud className="w-6 h-6 transform rotate-45" />}
+                    </div>
+                    <h4 className={`font-normal mb-3 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                      <Code className="w-4 h-4" />
+                      Technical Implementation
+                    </h4>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {['Python', 'SVM', 'ONNX', 'Scikit-learn', 'Pandas', 'NumPy'].map(tech => (
+                        <span key={tech} className={`bg-black/40 backdrop-blur-md px-3 py-1 text-sm font-normal tracking-wide text-white border rounded ${isDarkMode ? 'border-emerald-500/30' : 'border-sky-500/30'}`}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-white/90 font-normal leading-relaxed">
+                      Selected an optimized Support Vector Machine (SVM) as the final model, achieving a low Mean Squared Error (MSE) of 0.0119. Packaged the final trained model into the ONNX format for cross-platform interoperability and deployment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <div className={`bg-black/30 backdrop-blur-md p-8 border rounded-lg relative overflow-hidden ${isDarkMode ? 'border-emerald-500/30' : 'border-sky-500/30'}`}>
+                  <div className="absolute top-4 right-4 opacity-10">
+                    {isDarkMode ? <Leaf className="w-12 h-12" /> : <Cloud className="w-12 h-12" />}
+                  </div>
+                  <div className="absolute bottom-4 left-4 opacity-5">
+                    {isDarkMode ? <Leaf className="w-8 h-8 transform rotate-90" /> : <Cloud className="w-8 h-8 transform rotate-90" />}
+                  </div>
+                  <h4 className={`font-normal mb-6 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                    <Award className="w-4 h-4" />
+                    Model Performance
+                  </h4>
+                  <div className="grid grid-cols-2 gap-8 text-center mb-6 relative z-10">
+                    <div>
+                      <div className={`text-3xl font-normal mb-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-500'}`}>0.0119</div>
+                      <div className="text-sm font-normal text-white/70 tracking-wide">Final MSE</div>
+                    </div>
+                    <div>
+                      <div className={`text-3xl font-normal mb-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-500'}`}>53,940</div>
+                      <div className="text-sm font-normal text-white/70 tracking-wide">Diamonds Dataset</div>
+                    </div>
+                  </div>
+                  <p className="text-white font-normal leading-relaxed text-center relative z-10 mb-4">
+                    🏆 SVM selected as winner with lowest validation error
+                  </p>
+                  <div className="text-sm text-white/70 space-y-2 relative z-10">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                      <span>Engineered Volume = x × y × z feature</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                      <span>Log-transformed price for modeling</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                      <span>ONNX export for deployment</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <a href="https://colab.research.google.com/drive/190vKTSKW-WB26GbYzC2_vvrdQSDoHlSM#scrollTo=aIicdaH2OnIw" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-3 bg-black/30 backdrop-blur-md hover:bg-black/40 px-6 py-3 transition-all duration-300 font-normal tracking-wide border rounded ${isDarkMode ? 'border-emerald-500/30 hover:border-emerald-500/50' : 'border-sky-500/30 hover:border-sky-500/50'}`}>
+                    <ExternalLink className="w-4 h-4" />
+                    Colab
+                  </a>
+                  <button className={`flex items-center gap-3 px-6 py-3 transition-all duration-300 font-normal tracking-wide rounded ${isDarkMode ? 'bg-emerald-500/80 hover:bg-emerald-500' : 'bg-sky-500/80 hover:bg-sky-500'}`}>
+                    <Database className="w-4 h-4" />
+                    Dataset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3: Heart Disease Prediction */}
+          <div className="mb-32">
+            <div className="grid md:grid-cols-2 gap-16 items-start">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={`w-12 h-12 backdrop-blur-md flex items-center justify-center rounded-lg border relative ${isDarkMode ? 'bg-emerald-500/20 border-emerald-500/30' : 'bg-sky-500/20 border-sky-500/30'}`}>
+                    <Brain className={`w-6 h-6 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`} />
+                    <div className="absolute -top-1 -right-1">
+                      {isDarkMode ? <Leaf className="w-3 h-3 text-emerald-300 opacity-70" /> : <Cloud className="w-3 h-3 text-sky-300 opacity-70" />}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-normal text-white tracking-wide">
+                      ❤️ Heart Disease Prediction Pipeline
+                    </h3>
+                    <p className={`font-normal tracking-wide ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                      Sprints x Microsoft
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className={`bg-black/20 backdrop-blur-md p-6 border rounded-lg relative overflow-hidden ${isDarkMode ? 'border-emerald-500/20' : 'border-sky-500/20'}`}>
+                    <div className="absolute top-2 right-2 opacity-5">
+                      {isDarkMode ? <Leaf className="w-6 h-6" /> : <Cloud className="w-6 h-6" />}
+                    </div>
+                    <h4 className={`font-normal mb-3 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                      <Lightbulb className="w-4 h-4" />
+                      Project Overview
+                    </h4>
+                    <p className="text-white/90 font-normal leading-relaxed">
+                      Developed and evaluated a complete machine learning pipeline to predict heart disease, utilizing both supervised and unsupervised learning techniques on a real-world dataset. Built as the final project for Microsoft Sprints X training program.
+                    </p>
+                  </div>
+
+                  <div className={`bg-black/20 backdrop-blur-md p-6 border rounded-lg relative overflow-hidden ${isDarkMode ? 'border-emerald-500/20' : 'border-sky-500/20'}`}>
+                    <div className="absolute top-2 right-2 opacity-5">
+                      {isDarkMode ? <Leaf className="w-6 h-6 transform rotate-45" /> : <Cloud className="w-6 h-6 transform rotate-45" />}
+                    </div>
+                    <h4 className={`font-normal mb-3 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                      <Code className="w-4 h-4" />
+                      Technical Implementation
+                    </h4>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {['Python', 'Logistic Regression', 'Scikit-learn', 'Pandas', 'Streamlit', 'EDA'].map(tech => (
+                        <span key={tech} className={`bg-black/40 backdrop-blur-md px-3 py-1 text-sm font-normal tracking-wide text-white border rounded ${isDarkMode ? 'border-emerald-500/30' : 'border-sky-500/30'}`}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-white/90 font-normal leading-relaxed">
+                      Engineered features and performed comprehensive Exploratory Data Analysis (EDA) using Pandas, NumPy, and Seaborn to uncover critical data insights. Mastered data cleaning, model training, and performance evaluation.
+                    </p>
+                  </div>
+
+                  <div className={`bg-red-900/20 backdrop-blur-md p-4 border border-red-500/30 rounded-lg relative overflow-hidden`}>
+                    <div className="absolute top-2 right-2 opacity-5">
+                      {isDarkMode ? <Leaf className="w-6 h-6" /> : <Cloud className="w-6 h-6" />}
+                    </div>
+                    <h4 className="font-normal text-red-400 mb-2 tracking-wide flex items-center gap-2">
+                      ⚠️ Educational Purpose Only
+                    </h4>
+                    <p className="text-white/80 text-sm font-normal leading-relaxed">
+                      This pipeline is a learning project — NOT a medical diagnostic tool. Designed to teach ML concepts and not validated for clinical use.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <div className={`bg-black/30 backdrop-blur-md p-8 border rounded-lg relative overflow-hidden ${isDarkMode ? 'border-emerald-500/30' : 'border-sky-500/30'}`}>
+                  <div className="absolute top-4 right-4 opacity-10">
+                    {isDarkMode ? <Leaf className="w-12 h-12" /> : <Cloud className="w-12 h-12" />}
+                  </div>
+                  <div className="absolute bottom-4 left-4 opacity-5">
+                    {isDarkMode ? <Leaf className="w-8 h-8 transform rotate-90" /> : <Cloud className="w-8 h-8 transform rotate-90" />}
+                  </div>
+                  <h4 className={`font-normal mb-6 tracking-wide flex items-center gap-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-400'}`}>
+                    <Award className="w-4 h-4" />
+                    Model Performance
+                  </h4>
+                  <div className="grid grid-cols-2 gap-8 text-center mb-6 relative z-10">
+                    <div>
+                      <div className={`text-3xl font-normal mb-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-500'}`}>0.877</div>
+                      <div className="text-sm font-normal text-white/70 tracking-wide">F1-Score</div>
+                    </div>
+                    <div>
+                      <div className={`text-3xl font-normal mb-2 ${isDarkMode ? 'text-emerald-400' : 'text-sky-500'}`}>0.951</div>
+                      <div className="text-sm font-normal text-white/70 tracking-wide">AUC Score</div>
+                    </div>
+                  </div>
+                  <p className="text-white font-normal leading-relaxed text-center relative z-10 mb-4">
+                    🏆 Logistic Regression selected for stability and interpretability
+                  </p>
+                  <div className="text-sm text-white/70 space-y-2 relative z-10">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                      <span>End-to-end ML pipeline development</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                      <span>Interactive Streamlit UI deployment</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${isDarkMode ? 'bg-emerald-400' : 'bg-sky-400'}`}></div>
+                      <span>Model interpretability for healthcare</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <button className={`flex items-center gap-3 bg-black/30 backdrop-blur-md hover:bg-black/40 px-6 py-3 transition-all duration-300 font-normal tracking-wide border rounded ${isDarkMode ? 'border-emerald-500/30 hover:border-emerald-500/50' : 'border-sky-500/30 hover:border-sky-500/50'}`}>
+                    <Github className="w-4 h-4" />
+                    Code
+                  </button>
+                  <button className={`flex items-center gap-3 px-6 py-3 transition-all duration-300 font-normal tracking-wide rounded ${isDarkMode ? 'bg-emerald-500/80 hover:bg-emerald-500' : 'bg-sky-500/80 hover:bg-sky-500'}`}>
+                    <ExternalLink className="w-4 h-4" />
+                    Demo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
