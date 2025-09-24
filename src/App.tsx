@@ -160,7 +160,7 @@ function App() {
                     <Leaf className="w-6 h-6 opacity-60 transform rotate-180" />
                   </p>
                   <p className="text-lg text-white/80 font-normal tracking-wide max-w-3xl mx-auto leading-relaxed">
-                    Computer Science Junior (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. Passionate about leveraging AI and data analysis to solve complex problems. Proficient in Python, Scikit-learn, and data visualization, with a proven ability to deliver impactful projects demonstrated through intensive internships.
+                    Computer Science sophomore (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. Passionate about leveraging AI and data analysis to solve complex problems. Proficient in Python, Scikit-learn, and data visualization, with a proven ability to deliver impactful projects demonstrated through intensive internships.
                   </p>
                 </div>
               </div>
@@ -189,85 +189,6 @@ function App() {
       </section>
 
       
-
-            {/* Content Section */}
-            <div className="lg:col-span-8 space-y-10">
-              <div className="space-y-6">
-                <p className="text-xl font-normal text-white/90 leading-relaxed">
-                  I'm a Computer Science sophomore at Nile University (GPA: 3.76) with hands-on experience in developing end-to-end machine learning models. I'm passionate about leveraging AI and data analysis to solve complex problems.
-                </p>
-
-                <p className="text-lg font-normal text-white/80 leading-relaxed">
-                  My journey has led me through intensive internships where I've delivered impactful projects in healthcare AI, including stroke risk prediction and diamond price modeling. I'm proficient in Python, Scikit-learn, and data visualization, with a proven ability to deliver impactful projects demonstrated through intensive internships.
-                </p>
-
-                <p className="text-lg font-normal text-white/80 leading-relaxed">
-                  I build end-to-end ML pipelines and full-stack applications, combining technical expertise with creative problem-solving. My experience spans from healthcare data analysis to generative AI web applications with cross-platform deployment capabilities.
-                </p>
-              </div>
-
-              {/* Skills Grid with nature elements */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-black/30 backdrop-blur-md p-6 border border-emerald-500/30 rounded-lg relative overflow-hidden">
-                  <div className="absolute top-2 right-2 opacity-5">
-                    <Leaf className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-lg font-normal mb-4 text-green-400 tracking-wide flex items-center gap-3">
-                    <Brain className="w-5 h-5" />
-                    Current Focus
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">End-to-end ML pipeline development</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Generative AI integration</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Healthcare AI applications</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Bio-inspired algorithms</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-black/30 backdrop-blur-md p-6 border border-green-500/30 rounded-lg relative overflow-hidden">
-                  <div className="absolute top-2 right-2 opacity-5">
-                    <Leaf className="w-8 h-8 transform rotate-45" />
-                  </div>
-                  <h3 className="text-lg font-normal mb-4 text-emerald-400 tracking-wide flex items-center gap-3">
-                    <Leaf className="w-5 h-5" />
-                    Core Values
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Ethical AI development</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Sustainable technology</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Accessible solutions</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                      <span className="font-normal text-white/90 leading-relaxed">Natural harmony</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-32 px-8 bg-gradient-to-br from-slate-900/80 to-emerald-900/40 backdrop-blur-sm relative">
